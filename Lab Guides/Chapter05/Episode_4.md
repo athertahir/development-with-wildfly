@@ -44,8 +44,7 @@ step. 
 
 ### Note
 
-For examples: refer
-to `chapter 5/catalog-service-simple-test`.
+For examples: refer to `chapter05/catalog-service-simple-test`.
 
 First of all, we have to provide all the necessary dependencies:
 
@@ -254,8 +253,7 @@ As we have just hinted, Swarm can create the default test deployment.
 
 ### Note
 
-For example, refer
-to `chapter 5/catalog-service-test-default-deployment`.
+For example, refer to `chapter05/catalog-service-test-default-deployment`.
 
 We will modify the `Test` class so that the archive is created
 automatically:
@@ -304,8 +302,7 @@ analogous configuration for a Swarm test using the same example.  
 
 ### Note
 
-For examples, refer to
-`chapter 5/catalog-service-database-test`.
+For examples, refer to `chapter05/catalog-service-database-test`.
 
 If you would like to create the Swarm container manually, you have to
 implement the static method annotated with
@@ -407,8 +404,7 @@ client. Let's learn how to do it.
 
 ### Note
 
-For examples, refer to
-`chapter 5/catalog-service-database-test-standalone`.
+For examples, refer to `chapter05/catalog-service-database-test-standalone`.
 
 First of all, we have to add a bunch of dependencies to the
 `pom.xml` file:
