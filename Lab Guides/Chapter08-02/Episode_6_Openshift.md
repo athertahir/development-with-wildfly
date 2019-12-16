@@ -559,7 +559,9 @@ can once again check whether it works correctly. 
 
 `oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/customer-gateway-dns --name=customer-gateway`
 
-`customer-gateway-petstore.<update-me>-80-<update-me>.environments.katacoda.com/catalog/item`
+`oc expose svc/customer-gateway`
+
+`curl -X GET customer-gateway-petstore.<update-me>-80-<update-me>.environments.katacoda.com/catalog/item`
 
 
 As you may recall, we were using the name of the service when we were
