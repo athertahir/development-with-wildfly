@@ -410,11 +410,7 @@ plugin (Further reading, link 1).
 #### Standard Maven operation
 
 The first stage that we will implement is the unit testing stage. In the
-beginning, we will add a simple unit test in the same way that we did in
-[Chapter
-5](https://subscription.packtpub.com/book/web_development/9781786462374/5),
-*Testing Your Services with Arquillian*. We have to
-extend `pom.xml`:
+beginning, we will add a simple unit test. We have to extend `pom.xml`:
 
 ```
 (...)

@@ -1,14 +1,10 @@
 # Lab : Getting Familiar with WildFly Swarm
 
-#### Pre-reqs:
-- Docker
 
 #### Lab Environment
-We will run ubuntu as a Docker container. Run the following commands one by one to setup lab environment:
+You can perform this lab on VM or your PC. Run the following commands one by one to setup lab environment:
 
-`docker run -p 8080:8080 --name ubuntu -it ubuntu bash`
-
-`apt-get update && apt-get --assume-yes install default-jre && apt-get --assume-yes install maven`
+`apt-get update && apt-get --assume-yes install default-jdk && apt-get --assume-yes install maven && apt-get --assume-yes install git`
 
 `git clone https://github.com/athertahir/development-with-wildfly.git`
 
@@ -195,6 +191,8 @@ That's it. Congratulations! You have just created your first WildFly Swarm appli
 
 ### Does it really work?
 Before we look in greater detail at what happened, let's run the application to prove that it is indeed working. Open the console, enter the root directory of the application, and run the following command:
+
+`cd swarm-hello-world`
 
 `mvn wildfly-swarm:run`
 

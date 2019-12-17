@@ -1,19 +1,14 @@
 # Lab : Tuning the Configuration of Your Services
 In this chapter, you will learn how to configure your Swarm services. We will show you practical examples of different configuration tools that are available and how you can use them to steer the behavior of your applications.
 
-#### Pre-reqs:
-- Docker
-
 #### Lab Environment
-We will run ubuntu as a Docker container. Run the following commands one by one to setup lab environment:
+You can perform this lab on VM or your PC. Run the following commands one by one to setup lab environment:
 
-`docker run -p 8080:8080 --name ubuntu -it ubuntu bash`
-
-`apt-get update && apt-get --assume-yes install default-jre && apt-get --assume-yes install maven`
+`apt-get update && apt-get --assume-yes install default-jdk && apt-get --assume-yes install maven && apt-get --assume-yes install git`
 
 `git clone https://github.com/athertahir/development-with-wildfly.git`
 
-`cd development-with-wildfly/chapter04`
+`cd development-with-wildfly/chapter04 && ls -ltr`
 
 Modifying Swarm configuration
 -----------------------------
@@ -41,11 +36,7 @@ default configuration. Let's suppose that we want to change that port.
 What we have to do is specify the `swarm.http.port` property
 during the application execution, as follows:
 
-
-
-```
-mvn clean wildfly-swarm:run -Dswarm.http.port=12345
-```
+`mvn clean wildfly-swarm:run -Dswarm.http.port=12345`
 
 When running the web browser, we can see that, indeed, the port on which
 the application runs has been changed:
@@ -350,13 +341,11 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-Then, run it with the HTTP port property: 
+Then, run it with the HTTP port property inside `chapter04\catalog-service-config-main` directory: 
 
+`mvn clean wildfly-swarm:run -Dswarm.http.port=12345`
 
-
-```
-mvn clean wildfly-swarm:run -Dswarm.http.port=12345
-```
+Browser: `<host-ip>:12345/item/turtle`
 
 Also, we will check in in the browser:
 
@@ -602,7 +591,7 @@ configure it in a moment) and used a named query defined in
 an `Item` class to find pets by `id` (2).
 
 OK, let's move to the interesting part. We will create and use in-memory
-`h2``datasource`; The following is the code to do
+`h2` `datasource`; The following is the code to do
 so:
 
 
@@ -696,12 +685,13 @@ entity classes metadata (3), and, finally, provided the load script (4).
 
 The problem is that we don't have it yet; let's add it then:
 
-
-
 ```
 INSERT INTO ITEM(id, itemId, name, description, quantity) VALUES (1, 'turtle', 'turtle',  'Slow friendly reptile. Let your busy self see how it spends a hundred years of his life laying on sand and swimming.', 5);
+
 INSERT INTO ITEM(id, itemId, name, description, quantity) VALUES (2, 'hamster', 'hamster', 'Energetic rodent - great as a first pet. Will be your only inmate that takes his fitness training serviously.', 10);
+
 INSERT INTO ITEM(id, itemId, name, description, quantity) VALUES (3, 'goldfish', 'goldfish', 'With its beauty it will be the decoration of you aquarium. Likes gourmet fish feed and postmodern poetry.', 3);
+
 INSERT INTO ITEM(id, itemId, name, description, quantity) VALUES (4, 'lion', 'lion', 'Big cat with fancy mane. Loves playing the tag and cuddling with other animals and people.', 9);
 ```
 
@@ -745,11 +735,7 @@ module name. Let's look at the module descriptor:
 </module>
 ```
 
-To recall, this is the same kind of descriptor that we presented
-in[Chapter
-2](https://subscription.packtpub.com/book/web_development/9781786462374/2), *Getting
-Familiar with WildFly Swarm*, where we described the concept of modular
-classloading. In the preceding file, we are creating a module with
+In the preceding file, we are creating a module with
 the `"com.h2database.h2"` name (1), specifying that the only
 resource is the `h2` database artifact. Note that we are
 referencing the artifact using Maven coordinates. Finally, we have to
@@ -757,6 +743,8 @@ specify all the module dependencies (3).
 
 Let's build and run the application again. We are indeed able to look up
 our pets now:
+
+Browser: `<host-ip>:8080/item/hamster`
 
 ![](./4a002151-8fac-4593-8ab1-04f6e837e356.png)
 
@@ -1065,8 +1053,6 @@ in which the application currently runs? You have to provide
 the `swarm.project.stage` property. So, consider that, for
 example, we run the preceding example with the following command:
 
-
-
 ```
 mvn wildfly-swarm:run -Dswarm.project.stage=QA
 ```
@@ -1087,8 +1073,7 @@ look:
 
 ### Note
 
-Examples reference:
-`chapter 4/catalog-service-database-ymlconfig`
+Examples reference: `chapter 4/catalog-service-database-ymlconfig`
 
 The example is very similar to the XML configuration example. We have to
 exchange the configuration file for its YAML equivalent:

@@ -1,14 +1,9 @@
 # Lab : Right-Sizing Your Services
 
-#### Pre-reqs:
-- Docker
-
 #### Lab Environment
-We will run ubuntu as a Docker container. Run the following commands one by one to setup lab environment:
+You can perform this lab on VM or your PC. Run the following commands one by one to setup lab environment:
 
-`docker run -p 8080:8080 --name ubuntu -it ubuntu bash`
-
-`apt-get update && apt-get --assume-yes install default-jre && apt-get --assume-yes install maven`
+`apt-get update && apt-get --assume-yes install default-jdk && apt-get --assume-yes install maven && apt-get --assume-yes install git`
 
 `git clone https://github.com/athertahir/development-with-wildfly.git`
 

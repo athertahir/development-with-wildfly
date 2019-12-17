@@ -123,10 +123,6 @@ to **`Applications`** | **`Pods`**):
 
 OpenShift has indeed scaled our application according to our needs. 
 
-After having worked with OpenShift for some time, you should be able to
-see what we meant in [Chapter
-6](https://subscription.packtpub.com/book/web_development/9781786462374/6),
-*Deploying Applications on the Cloud with OpenShift*, when we wrote that
 OpenShift builds an effective and easy-to-use application development
 environment on top of Kubernetes. The preceding example showed how it
 works very well: Kubernetes is responsible for making sure that the

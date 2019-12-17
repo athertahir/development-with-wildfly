@@ -1,17 +1,12 @@
 # Lab : Testing Your Services with Arquillian
-Inthis chapter, you will learn how to test your microservices. For this purpose, we will use Arquillian, a test framework designed to test software components using their dedicated runtime, instead of creating mock-based unit tests. This is the framework developer to work seamlessly WildFly Swarm and, effectively, a framework of choice for it.
+In this chapter, you will learn how to test your microservices. For this purpose, we will use Arquillian, a test framework designed to test software components using their dedicated runtime, instead of creating mock-based unit tests. This is the framework developer to work seamlessly WildFly Swarm and, effectively,a framework of choice for it.
 
 We will introduce Arquillian and present the purpose of the project and its main features. Later, you will learn how to develop, write, and configure tests for your services based on practical examples.
 
-#### Pre-reqs:
-- Docker
-
 #### Lab Environment
-We will run ubuntu as a Docker container. Run the following commands one by one to setup lab environment:
+You can perform this lab on VM or your PC. Run the following commands one by one to setup lab environment:
 
-`docker run -p 8080:8080 --name ubuntu -it ubuntu bash`
-
-`apt-get update && apt-get --assume-yes install default-jre && apt-get --assume-yes install maven`
+`apt-get update && apt-get --assume-yes install default-jdk && apt-get --assume-yes install maven && apt-get --assume-yes install git`
 
 `git clone https://github.com/athertahir/development-with-wildfly.git`
 
