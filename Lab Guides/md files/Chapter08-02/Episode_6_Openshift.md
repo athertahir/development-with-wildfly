@@ -260,9 +260,7 @@ public class PricingApplication extends Application {
 Our second service is ready. It's time to deploy it on OpenShift. Push
 your application to your GitHub repository and invoke:
 
-```
-oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/pricing-service --name=pricing-service
-```
+`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/pricing-service --name=pricing-service`
 
 After your application is deployed, you can create a route to it and
 verify that it indeed works:
@@ -459,9 +457,7 @@ straightforward REST Client API to provide an adapter for the
 
 The implementation of `catalogProxy` is analogous.
 
-```
-oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/customer-gateway-env --name=customer-gateway
-```
+`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/customer-gateway-env --name=customer-gateway`
 
 Now we are ready to check whether our application is working. Let's
 create a route for the `petstore` service and check the web
@@ -567,4 +563,3 @@ can once again check whether it works correctly. 
 As you may recall, we were using the name of the service when we were
 creating the environment file for our databases. Each service in the
 cluster can be reached using this method.
-
