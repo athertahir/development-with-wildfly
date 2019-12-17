@@ -1,4 +1,5 @@
 # Lab : Right-Sizing Your Services
+In this episode, you will learn what Swarm does to create your services with only those dependencies that are necessary for them. Finally, you will learn how to further modify the service creation size and behavior using hollow JARs and thin JARs.
 
 #### Lab Environment
 You can perform this lab on VM or your PC. Run the following commands one by one to setup lab environment:
@@ -303,9 +304,7 @@ deployed application. When running it, we must provide the name of the
 application that we will deploy on the created server. We will be able
 to do it in the following way:
 
-```
-java jar catalog-1.0-hollow-swarm.jar catalog-1.0.war
-```
+`java -jar catalog-service-hollow-jar-1.0-hollow-swarm.jar  catalog-service-hollow-jar-1.0.war`
 
 This will start the container and run our application. As a result, it
 will behave in the same way as the original example.
@@ -374,10 +373,7 @@ You also have the possibility to mix thin JARs with hollow JARs. The
 runnable JAR does not contain the application that has to be deployed on
 it, so it has to be run in the same way as in the preceding example:
 
-
-```
-java jar catalog-1.0-hollow-swarm.jar catalog-1.0.war
-```
+`java -jar catalog-service-thin-jar-1.0-swarm.jar catalog-service-thin-jar-1.0.war`
 
 Both the server and the deployment do not contain bundled dependencies,
 so they have to be loaded from the Maven repository using the

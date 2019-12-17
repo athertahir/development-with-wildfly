@@ -1,5 +1,5 @@
 # Lab : Tuning the Configuration of Your Services
-In this chapter, you will learn how to configure your Swarm services. We will show you practical examples of different configuration tools that are available and how you can use them to steer the behavior of your applications.
+In this episode, you will learn how to configure your Swarm services. We will show you practical examples of different configuration tools that are available and how you can use them to steer the behavior of your applications.
 
 #### Lab Environment
 You can perform this lab on VM or your PC. Run the following commands one by one to setup lab environment:

@@ -1,5 +1,5 @@
 # Lab : Adding Resilience Using Hystrix
-In this chapter, we will learn how to deal with network failures, which are inevitable in a distributed environment. In order to do that, we will introduce the circuit breaker architectural pattern and cover when it should be used, and what its benefits are. We will look at its Netflix implementation, Hystrix. We will also cover how it is implemented and how it can be used. As an example, we will use Hystrix to add resilience and fault tolerance to our sample application.
+In this episode, we will learn how to deal with network failures, which are inevitable in a distributed environment. In order to do that, we will introduce the circuit breaker architectural pattern and cover when it should be used, and what its benefits are. We will look at its Netflix implementation, Hystrix. We will also cover how it is implemented and how it can be used. As an example, we will use Hystrix to add resilience and fault tolerance to our sample application.
 
 #### Pre-reqs:
 - https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly/cloud-development-with-wildfly-chapter-07
@@ -145,7 +145,7 @@ its operation.
 The dependencies that share the same thread pool are configurable. As a
 result, you are able to tune bulkheading behavior according to your
 architecture. Such a configuration is done using Hystrix group
-mechanism, which we will show you in the examples later in this chapter.
+mechanism, which we will show you in the examples later in this episode.
 
 So, we already know that the invocation may fail or be forced to fail by
 Hystrix. But, what happens in that scenario? The mechanism that is
@@ -239,7 +239,7 @@ command execution.
 
 You have already learned the basics of the Hystrix's circuit breaker
 implementation. Now it is time to learn its basic API, which we will use
-later in this chapter. Let's do it now.
+later in this episode. Let's do it now.
 
 Using Hystrix
 -------------

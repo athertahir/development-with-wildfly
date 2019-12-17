@@ -1,5 +1,5 @@
 # Lab : Testing Your Services with Arquillian
-In this chapter, you will learn how to test your microservices. For this purpose, we will use Arquillian, a test framework designed to test software components using their dedicated runtime, instead of creating mock-based unit tests. This is the framework developer to work seamlessly WildFly Swarm and, effectively,a framework of choice for it.
+In this episode, you will learn how to test your microservices. For this purpose, we will use Arquillian, a test framework designed to test software components using their dedicated runtime, instead of creating mock-based unit tests. This is the framework developer to work seamlessly WildFly Swarm and, effectively,a framework of choice for it.
 
 We will introduce Arquillian and present the purpose of the project and its main features. Later, you will learn how to develop, write, and configure tests for your services based on practical examples.
 
@@ -14,11 +14,13 @@ You can perform this lab on VM or your PC. Run the following commands one by one
 
 
 Introducing Arquillian
+----------------------
+
 We all know the benefits of unit testing. They are simple and run immediately. They isolate the components of your application and allow you to test them one by one, providing the coverage of each component's usage scenarios. Unfortunately, unit tests have their shortcomings too. When you cover your application with unit tests, they will confirm that each component of your application works correctly. Obviously, based only on that information, you cannot deduce that your whole application works correctly—that is a reason to have integration tests. You have to test your components inside the environment in which they will operate to ensure that the application works correctly as a whole. The problem with integration tests so far has been that they tend to be complicated to configure and took a long time to execute. Here is where Arquillian steps in. The aim of the project is to make integration tests as fast and simple to configure as unit tests.
 
 As you may recall, in Chapter 2, Getting Familiar with WildFly Swarm, we emphasized how fast modern runtimes are. Arquillian takes advantage of that and lets you easily configure the tests that run on the same runtime your application will run. If, for example, you are developing a Java EE application, you can configure Arquillian to run the test on the application server of your choice. Since modern applications servers are very fast, the test will run immediately. On the other hand, you will be able to test your application in its real environment with all its dependencies. 
 
-In our case, a runtime for each service is assembled by WildFly Swarm (as described in Chapter 3, Right-Sizing Your Applications). Arquillian allows you to configure the tests for such cases too. Let's find out how.
+In our case, a runtime for each service is assembled by WildFly Swarm. Arquillian allows you to configure the tests for such cases too. Let's find out how.
 
 Testing Swarm microservices with Arquillian
 -------------------------------------------
@@ -212,9 +214,7 @@ Finally, the `Test` method checks whether the
 
 Let's run the test now:
 
-```
-mvn clean wildfly-swarm:run
-```
+`mvn clean wildfly-swarm:run`
 
 You will note that the test has been deployed inside the Swarm
 container:
@@ -442,4 +442,4 @@ invocations from the test JVM (6).
 
 
 # Summary
-In this chapter, you learned what Arquillian is and how you can use it to test Swarm microservices. You also learned how to configure Arquillian to automatically create a Swarm container, how to modify the container configuration, and how to test the created microservice from within the container and from a standalone client.
+In this episode, you learned what Arquillian is and how you can use it to test Swarm microservices. You also learned how to configure Arquillian to automatically create a Swarm container, how to modify the container configuration, and how to test the created microservice from within the container and from a standalone client.

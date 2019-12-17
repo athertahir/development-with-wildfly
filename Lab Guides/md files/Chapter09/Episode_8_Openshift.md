@@ -1,5 +1,5 @@
 # Lab : Configuring Continuous Integration Using Jenkins
-In this chapter, we will teach you how to integrate application with Jenkins, a Continuous Integration (CI) server. We will introduce CI concepts and how they can be implemented using Jenkins. We will configure a sample pipeline so that you can see how changes in application code are propagated to the deployed application. 
+In this episode, we will teach you how to integrate application with Jenkins, a Continuous Integration (CI) server. We will introduce CI concepts and how they can be implemented using Jenkins. We will configure a sample pipeline so that you can see how changes in application code are propagated to the deployed application. 
 
 Let's start with the builds.
 

@@ -1,5 +1,5 @@
 # Lab : Scaling and Connecting Your Services - Load balancing
-In this chapter, we will look in greater detail at the process of deploying, scaling, and connecting your applications. You have already learned the basic information about deploying services to the OpenShift cloud. Now it's time to extend this knowledge and learn how to use it in practice.
+In this episode, we will look in greater detail at the process of deploying, scaling, and connecting your applications. You have already learned the basic information about deploying services to the OpenShift cloud. Now it's time to extend this knowledge and learn how to use it in practice.
 
 Let's start with deployments.
 
@@ -177,7 +177,7 @@ movement inside the cluster. They just invoke the service using its IP
 as if it was a physical host. 
 
 Let's return to our example and look at the load balancing of our host.
-Let's return to the example in which we are working within this chapter.
+Let's return to the example in which we are working within this episode.
 We statically scaled our catalog service to five instances. Let's enter
 the web console in order to look at all the pods on which the
 application currently runs:
