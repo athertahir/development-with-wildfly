@@ -3,6 +3,10 @@ In this chapter, we will look in greater detail at the process of deploying, sca
 
 Let's start with deployments.
 
+<span style="color:red"> *Important:*</span>
+
+Before starting this guide, complete these openshift labs: https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly
+
 #### Pre-reqs:
 - https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly/cloud-development-with-wildfly-chapter-07
 
