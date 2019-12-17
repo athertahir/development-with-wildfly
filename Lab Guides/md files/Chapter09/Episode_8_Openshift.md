@@ -7,9 +7,7 @@ Let's start with the builds.
 - https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly
 
 #### Lab Environment:
-Click following url to access lab environment and follow instruction provided in this guide.
-- https://www.katacoda.com/openshift/courses/playgrounds/openshift36
-
+Click [Openshift Environment](https://www.katacoda.com/openshift/courses/playgrounds/openshift36) to access lab environment and then follow instructions provided in this guide.
 
 You can access the `OpenShift Web Console` by clicking `Dashboard` tab located right to the terminal window. You will be welcomed by the user login screen. Let's enter our
 **`Username`** and **`Password`**.
