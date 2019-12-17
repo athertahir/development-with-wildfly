@@ -224,16 +224,16 @@ mvn clean wildfly-swarm:run
 You will note that the test has been deployed inside the Swarm
 container:
 
-![](./51_files/1a30e635-8e45-44d6-9d3b-717b94003829.png)
+![](./1a30e635-8e45-44d6-9d3b-717b94003829.png)
 
 It finishes successfully:
 
-![](./51_files/ad40daf3-6471-4148-94e1-459c59b5c649.png)
+![](./ad40daf3-6471-4148-94e1-459c59b5c649.png)
 
 Finally, the Swarm microservice starts (because we used
 the `wildfly-swarm:run` command):
 
-![](./51_files/657a809e-a546-413c-a297-49e976491b16.png)
+![](./657a809e-a546-413c-a297-49e976491b16.png)
 
 Note that Swarm, as in examples from the previous chapters, used the
 when-missing discovery mechanism and created the container with all the
@@ -292,110 +292,6 @@ have to annotate the class with the
 result as in the preceding paragraph. Note that we didn't use the
 `@Deployment` annotated static method as we did in the
 preceding example.
-
-### Swarm configuration
-
-In the preceding chapter, we showed you how to modify the Swarm
-configuration. The example that we used to present that was a database
-configuration. In this section, we will show you how to provide
-analogous configuration for a Swarm test using the same example.  
-
-### Note
-
-For examples, refer to `chapter05/catalog-service-database-test`.
-
-If you would like to create the Swarm container manually, you have to
-implement the static method annotated with
-the `org.wildfly.swarm.arquillian.CreateSwarm` annotation and
-return the instance of the `org.wildfly.swarm.Swarm` class
-from it. As you probably recall, we have already created a lot of Swarm
-containers inside the `main` functions that we created in
-[Chapter
-4](https://subscription.packtpub.com/book/web_development/9781786462374/4),
-*Tuning the Configuration of Your Services*. Swarm-creating methods that
-we will use in the tests work the same way. Let's take a look at the
-code:
-
-```
-package org.packt.swarm.petstore.catalog;
-
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.packt.swarm.petstore.catalog.model.Item;
-import org.wildfly.swarm.Swarm;
-import org.wildfly.swarm.arquillian.CreateSwarm;
-
-import javax.inject.Inject;
-import java.net.URL;
-
-//1
-@RunWith(Arquillian.class)
-public class CatalogServiceTest {
-
-@Deployment
-public static JavaArchive createDeployment() {
-return ShrinkWrap.create(JavaArchive.class)
-                .addClasses(Item.class, CatalogService.class)
-                 //1
-                .addAsResource("datasources.yml")
-                .addAsResource("META-INF/persistence.xml")
-                .addAsResource("META-INF/load.sql")
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-}
-
-    //2
-    @CreateSwarm
-    public static Swarm createSwarm() throws Exception {
-        Swarm swarm = new Swarm();
-        //3
-        ClassLoader cl = CatalogServiceTest.class.getClassLoader();
-        URL dataSourcesConfig = cl.getResource("datasources.yml");
-        //4
-        swarm.withConfig(dataSourcesConfig);
-        return swarm;
-    }
-
-//4
-@Inject
-CatalogService catalogService;
-
-//5
-@Test
-public void testSearchById() {
-        Assert.assertEquals(catalogService.searchById("turtle").getName(),"turtle");
-}
-}
-```
-
-In the beginning, we created the deployment with all the necessary
-classes and configurations.
-
-### Note
-
-We have to add the datasource configuration, the persistence
-configuration, and the load file (1) so that they can be read from
-within the test.
-
-The key part is the `createSwarm`method (2) mentioned
-previously. It creates the Swarm instance, reads the datasources
-configuration (3), and configures Swarm with it (4).
-
-When the container and deployment are ready, we can start writing the
-test logic. We start by injecting the`CatalogService` to the
-test (4). Recall that this test runs inside the Swarm container, and as
-a result, the service can be injected into it. Finally, to ensure that
-our service indeed works correctly, we check whether the returned data
-is correct (5). If you run the test now, you will see that it passes
-correctly. However, currently, we are creating the microservices without
-any endpoints and testing them from inside the container. That's OK, but
-we would also like to test the whole microservice, using its external
-interface. Let's take a look at how to do it.
 
 ### Testing from a standalone client
 
