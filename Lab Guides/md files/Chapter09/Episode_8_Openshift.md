@@ -1,5 +1,5 @@
 # Lab : Configuring Continuous Integration Using Jenkins
-In this episode, we will teach you how to integrate application with Jenkins, a Continuous Integration (CI) server. We will introduce CI concepts and how they can be implemented using Jenkins. We will configure a sample pipeline so that you can see how changes in application code are propagated to the deployed application. 
+In this episode, we will teach you how to integrate application with Jenkins, a Continuous Integration (CI) server. We will introduce CI concepts and how they can be implemented using Jenkins. We will configure a sample pipeline so that you can see how changes in application code are propagated to the deployed application.
 
 Let's start with the builds.
 
@@ -7,7 +7,7 @@ Let's start with the builds.
 - https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly
 
 #### Lab Environment:
-Click [Openshift Environment](https://www.katacoda.com/openshift/courses/playgrounds/openshift36) to access lab environment and then follow instructions provided in this guide.
+Click [Openshift Environment](https://www.katacoda.com/openshift/courses/playgrounds/openshift311) to access lab environment and then follow instructions provided in this guide.
 
 You can access the `OpenShift Web Console` by clicking `Dashboard` tab located right to the terminal window. You will be welcomed by the user login screen. Let's enter our
 **`Username`** and **`Password`**.
@@ -25,7 +25,7 @@ Click `New Project` and add following data to create new project:
 
 Enter **petstore** as the name of the project. In order to deploy
 catalog-service to OpenShift, we will use the source-to-image build
-using the CLI. 
+using the CLI.
 
 To start with, ensure that you have logged in to the
 cluster, as follows:
@@ -239,7 +239,7 @@ spec:
   strategy:
     type: JenkinsPipeline
     jenkinsPipelineStrategy:
-      jenkinsfile:"pipeline { \n agent any\n stages {\n stage('Build') {\n steps {\n echo 'Pipeline is running'\n }\n }\n }\n }\n"
+      jenkinsfile: "pipeline { \n agent any\n stages {\n stage('Build') {\n steps {\n echo 'Pipeline is running'\n }\n }\n }\n }\n"
 ```
 
 After the script is created, we can click on the **`Create`** button:
@@ -268,7 +268,7 @@ till it has been deployed. After we are able to see that the application
 is running in the **`Pods`** view, we are ready to start the build of
 our first `pipeline`.
 
-In order to do that, let's navigate to **`Build | `****`Pipelines`**.
+In order to do that, let's navigate to **`Build | **`Pipelines`**.
 You will be able to see that there is a new `pipeline`
 present:
 
@@ -596,10 +596,10 @@ We are finally ready to update our `pipeline`. Let's take a
 look:
 
 ```
-pipeline { 
+pipeline {
 //1
  agent any
-//2 
+//2
 tools {
     maven 'maven3.5.2'
     jdk 'jdk8u152'
@@ -662,7 +662,7 @@ parameter.
 Let's take a look at our new `pipeline`:
 
 ```
-pipeline { 
+pipeline {
  agent any
  tools {
     maven 'maven3.5.2'
@@ -795,7 +795,7 @@ configure email, HipChat, or slack notification.
 Let's take a look at the build:
 
 ```
-pipeline { 
+pipeline {
  agent any
  tools {
     maven 'maven3.5.2'
