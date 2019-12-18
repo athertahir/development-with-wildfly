@@ -360,7 +360,10 @@ public class PricingProxy {
 
 `oc delete all -l app=customer-gateway`
 
-`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter11/customer-gateway-hystrix --name=customer-gateway`
+```
+oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git \
+--context-dir=chapter11/customer-gateway-hystrix --name=customer-gateway
+```
 
 `customer-gateway-petstore.<update-me>-80-<update-me>.environments.katacoda.com/catalog/item`
 
@@ -582,7 +585,10 @@ return (String) response.readEntity(String.class);
 
 `oc delete all -l app=pricing-service`
 
-`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter11/pricing-service-misbehave --name=pricing-service`
+```
+oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git \
+--context-dir=chapter11/pricing-service-misbehave --name=pricing-service
+```
 
 `oc expose svc/pricing-service`
 

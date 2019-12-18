@@ -5,10 +5,10 @@ Let's start with deployments.
 
 <span style="color:red"> *Important:*</span>
 
-Before starting this guide, complete these openshift labs [here](https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly) 
- 
+Before starting this guide, complete these openshift labs [here](https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly)
+
 #### Pre-reqs:
-- [Openshift Wildfly Lab](https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly/cloud-development-with-wildfly-chapter-07) 
+- [Openshift Wildfly Lab](https://www.katacoda.com/athertahir/courses/cloud-development-with-wildfly/cloud-development-with-wildfly-chapter-07)
 
 Deployments
 -----------
@@ -218,7 +218,10 @@ Let's run our new application:
 
 `oc delete all -l app=catalog-service`
 
-`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/catalog-service-openshift-load-balancing/ --name=catalog-service`
+```
+oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git \
+--context-dir=chapter8/catalog-service-openshift-load-balancing/ --name=catalog-service
+```
 
 `oc expose svc/catalog-service`
 
@@ -228,8 +231,8 @@ As a result, we are ready to trace the load balancing:
 
 ![](./e4f08023-82dc-4337-af5f-0a7e9e67a789.png)
 
-Run this command multiple times in the terminal:
-`catalog-service-petstore.<update-me>-80-<update-me>.environments.katacoda.com/item/dbf67f4d-f1c9-4fd4-96a8-65ee1a22b9ff`
+Run this command multiple times in the terminal or open url in browser:
+`curl -I catalog-service-petstore.<update-me>-80-<update-me>.environments.katacoda.com/item/dbf67f4d-f1c9-4fd4-96a8-65ee1a22b9ff`
 
 In the preceding screenshot, note that the request is being
 automatically load balanced among the available pods.

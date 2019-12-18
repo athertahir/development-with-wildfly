@@ -260,10 +260,15 @@ public class PricingApplication extends Application {
 Our second service is ready. It's time to deploy it on OpenShift. Push
 your application to your GitHub repository and invoke:
 
-`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/pricing-service --name=pricing-service`
+```
+oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git \
+--context-dir=chapter8/pricing-service --name=pricing-service
+```
 
 After your application is deployed, you can create a route to it and
 verify that it indeed works:
+
+`oc expose svc/pricing-service`
 
 ![](./4127562e-eac4-47b1-bf6e-0212ed83ef2b.png)
 
@@ -457,11 +462,16 @@ straightforward REST Client API to provide an adapter for the
 
 The implementation of `catalogProxy` is analogous.
 
-`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/customer-gateway-env --name=customer-gateway`
+```
+oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git \
+--context-dir=chapter8/customer-gateway-env --name=customer-gateway
+```
 
 Now we are ready to check whether our application is working. Let's
-create a route for the `petstore` service and check the web
+create a **route** for the `petstore` service and check the web
 browser:
+
+`oc expose svc/customer-gateway`
 
 ![](./a1bdc326-2a5e-4017-8411-960cfd92777c.png)
 
@@ -553,7 +563,10 @@ can once again check whether it works correctly. 
 
 `oc delete all -l app=customer-gateway`
 
-`oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git --context-dir=chapter8/customer-gateway-dns --name=customer-gateway`
+```
+oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git \
+--context-dir=chapter8/customer-gateway-dns --name=customer-gateway
+```
 
 `oc expose svc/customer-gateway`
 
