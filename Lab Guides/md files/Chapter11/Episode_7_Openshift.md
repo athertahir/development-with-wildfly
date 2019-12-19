@@ -365,7 +365,9 @@ oc new-app wildflyswarm-10-centos7~https://github.com/PacktPublishing/Hands-On-C
 --context-dir=chapter11/customer-gateway-hystrix --name=customer-gateway
 ```
 
-`customer-gateway-petstore.<update-me>-80-<update-me>.environments.katacoda.com/catalog/item`
+`oc expose svc/customer-gateway`
+
+`curl customer-gateway-petstore.<update-me>-80-<update-me>.environments.katacoda.com/catalog/item`
 
 
 The getPrice method of the proxy (1) creates the command object (2) and
