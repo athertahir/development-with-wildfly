@@ -611,7 +611,7 @@ tools {
  stage('Unit tests') {
      steps {
       //4
-      git url: 'https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git'
+      git url: 'https://github.com/athertahir/development-with-wildfly.git'
  //5
  sh 'mvn clean test -Dswarm.build.modules=target/test-classes/modules'
  }
@@ -673,7 +673,7 @@ pipeline {
  stages {
  stage('Test') {
      steps {
-      git url: 'https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git'
+      git url: 'https://github.com/athertahir/development-with-wildfly.git'
       sh 'mvn clean install -Dswarm.build.modules=target/test-classes/modules'
      }
     }
@@ -806,7 +806,7 @@ pipeline {
  stages {
  stage('Test') {
      steps {
-      git url: 'https://github.com/PacktPublishing/Hands-On-Cloud-Development-with-WildFly.git'
+      git url: 'https://github.com/athertahir/development-with-wildfly.git'
       sh 'mvn clean install -Dswarm.build.modules=target/test-classes/modules'
      }
     }
