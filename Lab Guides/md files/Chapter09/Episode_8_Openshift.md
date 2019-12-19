@@ -239,7 +239,8 @@ spec:
   strategy:
     type: JenkinsPipeline
     jenkinsPipelineStrategy:
-      jenkinsfile: "pipeline { \n agent any\n stages {\n stage('Build') {\n steps {\n echo 'Pipeline is running'\n }\n }\n }\n }\n"
+      jenkinsfile: "pipeline { \n agent any\n stages {\n stage('Build') 
+      {\n steps {\n echo 'Pipeline is running'\n }\n }\n }\n }\n"
 ```
 
 After the script is created, we can click on the **`Create`** button:
@@ -588,7 +589,7 @@ on **`Manage Jenkins`** and select the tool configuration for **`JDK`**:
 
 ![](./5b456ca7-1237-42b8-8c89-2a213b2c670e.png)
 
-And**`Maven`**:
+And **`Maven`**:
 
 ![](./7690d936-a67d-4c30-920c-0f84686dbc09.png)
 
