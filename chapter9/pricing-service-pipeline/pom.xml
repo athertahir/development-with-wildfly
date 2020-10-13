@@ -20,7 +20,7 @@
         <version.fabric8.plugin>1.2.0.Beta4</version.fabric8.plugin>
         <version.postgresql>42.1.4.jre7</version.postgresql>
         <version.h2>1.4.187</version.h2>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
     </properties>
 
     <dependencies>
