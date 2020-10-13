@@ -16,7 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <version.wildfly.swarm>2018.3.0</version.wildfly.swarm>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.arquillian>1.1.12.Final</version.arquillian>
     </properties>
 
